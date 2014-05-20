@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        android:gravity="center_horizontal"
+        android:minHeight="605dp"
+        android:paddingBottom="35dp"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="insideOverlay"
+        android:scrollbars="vertical" >
+
+        <TextView
+            android:id="@+id/headerTxt"
+            style="@style/headerTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="19dp"
+            android:text="@string/app_name"
+            android:textAlignment="center" />
+        
+<TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerTxt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="52dp"
+            android:text="@string/overzichtPushBerichten"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white" />
+
+<TextView
+    android:id="@+id/textView1"
+    style="@style/pushMsgFields"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/textView2"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="30dp"
+    android:background="@drawable/pushmsg"
+    android:text="@string/pushBericht" />
+
+<TextView
+    android:id="@+id/TextView01"
+    style="@style/pushMsgFields"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/textView1"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="18dp"
+    android:background="@drawable/pushmsg"
+    android:text="@string/pushBericht" />
+
+<TextView
+    android:id="@+id/TextView02"
+    style="@style/pushMsgFields"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/TextView01"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="20dp"
+    android:background="@drawable/pushmsg"
+    android:text="@string/pushBericht" />
+
+<TextView
+    android:id="@+id/TextView03"
+    style="@style/pushMsgFields"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/TextView02"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="18dp"
+    android:background="@drawable/pushmsg"
+    android:text="@string/pushBericht" />
+
+<TextView
+    android:id="@+id/TextView04"
+    style="@style/pushMsgFields"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/TextView03"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="17dp"
+    android:background="@drawable/pushmsg"
+    android:text="@string/pushBericht" />
+
+<TextView
+    android:id="@+id/TextView05"
+    style="@style/pushMsgFields"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/TextView04"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="19dp"
+    android:background="@drawable/pushmsg"
+    android:text="@string/pushBericht" />
+        
+    </RelativeLayout>
+
+</ScrollView>

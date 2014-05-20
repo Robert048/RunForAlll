@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RunForAll</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="placeholderGebruikersnaam">Gebruikersnaam</string>
+    <string name="placeholderWachtwoord">Wachtwoord</string>
+    <string name="registreer">REGISTREER</string>
+    <string name="login">LOG IN</string>
+    <string name="welkom">Welkom terug</string>
+    <string name="startLopen">Start hardlopen</string>
+    <string name="details">Details</string>
+    <string name="berichten">Berichten</string>
+    <string name="instellingen">Instellingen</string>
+    <string name="checkboxMan">Man</string>
+    <string name="checkboxVrouw">Vrouw</string>
+    <string name="geboortedatum">Geboortedatum</string>
+    <string name="email">E-mail</string>
+    <string name="land">Land</string>
+    <string name="lengte">Lengte</string>
+    <string name="gewicht">Gewicht</string>
+    <string name="test">Instellingen</string>
+    <string name="selectRoute">Selecteer je route</string>
+    <string name="voorgeselecteerdeRoute">Start voorgestelde route</string>
+    <string name="eigenRoute">Start eigen route</string>
+    <string name="bekijkGelopen">Bekijk gelopen routes</string>
+    <string name="gegevens">Mijn gegevens</string>
+    <string name="overzichtRoutes">Overzicht Routes</string>
+    <string name="routeNaam1">Route naam 1</string>
+    <string name="routeNaam2">Route naam 2</string>
+    <string name="routeNaam3">Route naam 3</string>
+    <string name="selectAfstand">Selecteer de gewenste afstand</string>
+    <string name="selecteerRoute">Selecteer de gewenste route</string>
+    <string name="vijf">5 km</string>
+    <string name="tien">10 km</string>
+    <string name="vijftien">15 km</string>
+    <string name="twintig">20 km</string>
+    <string name="id">ID</string>
+    <string name="km">Km</string>
+    <string name="startLocatie">Start locatie</string>
+    <string name="endLocatie">Eind locatie</string>
+    <string name="beginTijd">Begin tijd</string>
+    <string name="eindTijd">Eind tijd</string>
+    <string name="loopTijd">Looptijd</string>
+    <string name="gspu">Gemiddelde snelheid per uur</string>
+    <string name="calorieen">Verbrande calorieën</string>
+    <string name="volgende">Volgende</string>
+    <string name="naam">Naam</string>
+    <string name="geslacht">Geslacht</string>
+    <string name="overzichtPushBerichten">Overzicht pushberichten</string>
+    <string name="pushBericht">Voorbeeld bericht: Jan gaat zo hardlopen!</string>
+    <string name="selectMuziek">Selecteer uw muziek</string>
+    <string name="facebook">Facebook</string>
+    <string name="vrienden">Vrienden</string>
+    <string name="vriendToevoegen">Vriend toevoegen</string>
+    <string name="vriendBlokkeren">Vriend blokkeren</string>
+    <string name="voegEenVriendToe">Voeg een vriend toe</string>
+    <string name="overzichtVrienden">Overzicht vrienden</string>
+    <string name="zoekenOpEmail">Zoeken op e-mail</string>
+    <string name="toevoegen">Toevoegen</string>
+
+    <!-- KLEUR CODE -->
+    <color name="white">#ffffff</color>
+
+    <string name="title_activity_start">Start</string>
+    <string name="title_activity_select_route">SelectRoute</string>
+    <string name="title_activity_details">Details</string>
+    <string name="title_activity_berichten">Berichten</string>
+    <string name="title_activity_instellingen">Instellingen</string>
+    <string name="title_activity_bekijk_gelopen_routes">BekijkGelopenRoutes</string>
+    <string name="title_activity_voorgestelde_route">VoorgesteldeRoute</string>
+    <string name="title_activity_eigen_route">EigenRoute</string>
+    <string name="title_activity_informatie_specifieke_route">InformatieSpecifiekeRoute</string>
+    <!-- robert -->
+    <string name="title_activity_gewenste_route">GewensteRoute</string>
+    <string name="title_activity_mijn_gegevens">MijnGegevens</string>
+    <string name="title_activity_facebook_settings">FacebookSettings</string>
+    <string name="title_activity_vrienden">Vrienden</string>
+    <string name="title_activity_vriend_toevoegen">VriendToevoegen</string>
+    <string name="title_activity_vriend_blokkeren">VriendBlokkeren</string>
+    <string name="title_activity_overzicht_vrienden">OverzichtVrienden</string>
+
+</resources>

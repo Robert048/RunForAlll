@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background"
+        android:gravity="center_horizontal"
+        android:minHeight="660dp"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="insideOverlay"
+        android:paddingBottom="30dp"
+        android:scrollbars="vertical" >
+
+        <TextView
+            android:id="@+id/headerTxt"
+            style="@style/headerTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="19dp"
+            android:text="@string/app_name"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerTxt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="52dp"
+            android:text="@string/routeNaam1"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white" />
+
+        <!-- Label -->
+        <TextView
+            android:id="@+id/textView1"
+            style="@style/labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/EditText1"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="22dp"
+            android:text="@string/id" />
+
+        <!-- Veld voor ID -->
+        <EditText
+            android:id="@+id/EditText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView1"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_edges"
+            android:inputType="number"
+            android:focusable="false"
+            android:ems="10" />
+		
+        <!-- Veld voor km -->
+        <EditText
+            android:id="@+id/EditText01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView01"
+            android:layout_below="@+id/TextView01"
+            android:background="@drawable/rounded_edges"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="number" />
+
+        <!-- Label -->
+        <TextView
+            android:id="@+id/TextView01"
+            style="@style/labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/EditText1"
+            android:layout_below="@+id/EditText1"
+            android:text="@string/km" />
+
+        <!-- Label -->
+        <TextView
+            android:id="@+id/TextView02"
+            style="@style/labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/EditText01"
+            android:layout_below="@+id/EditText01"
+            android:text="@string/startLocatie" />
+
+        <!-- Veld voor startLocatie -->
+        <EditText
+            android:id="@+id/EditText02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView02"
+            android:layout_below="@+id/TextView02"
+            android:background="@drawable/rounded_edges"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="text" />
+
+        <!-- Label -->
+        <TextView
+            android:id="@+id/TextView03"
+            style="@style/labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/EditText02"
+            android:layout_below="@+id/EditText02"
+            android:text="@string/endLocatie" />
+
+        <!-- Veld voor eindLocatie -->
+        <EditText
+            android:id="@+id/EditText03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView03"
+            android:layout_below="@+id/TextView03"
+            android:background="@drawable/rounded_edges"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="text" />
+		
+		<!-- Label -->
+        <TextView
+            android:id="@+id/TextView04"
+            style="@style/labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/EditText03"
+            android:layout_below="@+id/EditText03"
+            android:text="@string/beginTijd" />
+
+        <!-- Veld voor beginTijd -->
+        <EditText
+            android:id="@+id/EditText04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView04"
+            android:layout_below="@+id/TextView04"
+            android:background="@drawable/rounded_edges"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="time" />
+
+        <!-- Label -->
+        <TextView
+            android:id="@+id/TextView05"
+            style="@style/labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/EditText04"
+            android:layout_below="@+id/EditText04"
+            android:text="@string/eindTijd" />
+
+        <!-- Veld voor eindTijd -->
+        <EditText
+            android:id="@+id/EditText05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView05"
+            android:layout_below="@+id/TextView05"
+            android:background="@drawable/rounded_edges"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="time" />
+
+        <!-- Label -->
+        <TextView
+            android:id="@+id/TextView06"
+            style="@style/labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/EditText05"
+            android:layout_below="@+id/EditText05"
+            android:text="@string/loopTijd" />
+
+        <!-- Veld voor loopTijd -->
+        <EditText
+            android:id="@+id/EditText06"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView06"
+            android:layout_below="@+id/TextView06"
+            android:background="@drawable/rounded_edges"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="time" />
+
+        <!-- Label -->
+        <TextView
+            android:id="@+id/TextView07"
+            style="@style/labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/EditText06"
+            android:layout_below="@+id/EditText06"
+            android:text="@string/gspu" />
+
+        <!-- Veld voor gemiddelde snelheid per uur -->
+        <EditText
+            android:id="@+id/EditText07"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView07"
+            android:layout_below="@+id/TextView07"
+            android:background="@drawable/rounded_edges"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="number" />
+
+        <!-- Label -->
+        <TextView
+            android:id="@+id/TextView08"
+            style="@style/labels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/EditText07"
+            android:layout_below="@+id/EditText07"
+            android:text="@string/calorieen" />
+
+        <!-- Veld voor verbrande cal -->
+        <EditText
+            android:id="@+id/EditText08"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/TextView08"
+            android:layout_below="@+id/TextView08"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/rounded_edges"
+            android:ems="10"
+            android:focusable="false"
+            android:inputType="number" />
+
+    </RelativeLayout>
+
+</ScrollView>
