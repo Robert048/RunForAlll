@@ -1,23 +1,17 @@
 package com.example.runforall;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
-import android.app.ListActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.EditText;
-import android.widget.ListView;
 import android.os.Build;
 
-public class VriendToevoegen extends ListActivity {
+public class VriendToevoegen extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +20,8 @@ public class VriendToevoegen extends ListActivity {
 		
         // Hide the actionbar
 		ActionBar actionBar = getActionBar();
-		actionBar.hide();
-		
+		actionBar.hide();		
+
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction()
 					.add(R.id.container, new PlaceholderFragment()).commit();
