@@ -2,224 +2,141 @@ package com.example.runforall;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import android.app.Activity;
-import android.app.ActionBar;
-import android.app.Fragment;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
-
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-
-import android.os.Bundle;
-
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
+import android.widget.Toast;
 
-public class Register extends Activity {
-	// Fields
-	private ProgressDialog pDialog;
-	 
+public class Register extends Activity implements OnClickListener{
 
-   JSONParser jsonParser = new JSONParser();
-    
-    //gebruikersnaam
-   static EditText inputGebruikersNaam;
-    //geslacht
-   static  RadioButton inputCheckMan;
-   static  RadioButton inputCheckVrouw;
-    //geboortedatum
-   static EditText inputGeboortedatum;
-    //e-mail
-   static EditText inputEmail;
-    //land
-   static EditText inputLand;
-    //wachtwoord1
-   static EditText inputWachtwoord1;
-    //wachtwoord2
-   static EditText inputWachtwoord2;
-    //lengte
-   static EditText inputLengte;
-    //gewicht
-   static EditText inputGewicht;
-    
-    private static String url_register = "http://inf1g_runforall.samba-ti.nl/register.php";
-        
+	private EditText user, pass;
+	private Button  mRegister;
+
+	 // Progress Dialog
+    private ProgressDialog pDialog;
+
+    // JSON parser class
+    JSONParser jsonParser = new JSONParser();
+
+    //php login script
+
+    //localhost :
+    //testing on your device
+    //put your local ip instead,  on windows, run CMD > ipconfig
+    //or in mac's terminal type ifconfig and look for the ip under en0 or en1
+   // private static final String LOGIN_URL = "http://xxx.xxx.x.x:1234/webservice/register.php";
+
+    //testing on Emulator:
+    private static final String LOGIN_URL = "http://runforall.samba-ti.nl/register.php";
+
+  //testing from a real server:
+    //private static final String LOGIN_URL = "http://www.yourdomain.com/webservice/register.php";
+
+    //ids
     private static final String TAG_SUCCESS = "success";
-    
+    private static final String TAG_MESSAGE = "message";
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-
 		setContentView(R.layout.fragment_register);
 
-		
-        // Hide the actionbar
-		ActionBar actionBar = getActionBar();
-		actionBar.hide();
-		
-		
-		//Edit Text
-		inputGebruikersNaam = (EditText) findViewById(R.id.EditText1);
-		inputCheckMan = (RadioButton) findViewById(R.id.checkBox1);
-		inputCheckVrouw = (RadioButton) findViewById(R.id.checkBox2);
-		inputGeboortedatum = (EditText) findViewById(R.id.EditText2);
-		inputEmail = (EditText) findViewById(R.id.EditText3);
-		inputLand = (EditText) findViewById(R.id.EditText4);
-		inputWachtwoord1 = (EditText) findViewById(R.id.EditText5);
-		inputWachtwoord2 = (EditText) findViewById(R.id.EditText6);
-		inputLengte = (EditText) findViewById(R.id.EditText7);
-		inputGewicht = (EditText) findViewById(R.id.EditText8);
-		
-		
-		setContentView(R.layout.activity_register);
-		
-		// Check witch checkbox is checked (Only one checkbox can be checked)
-		
+		user = (EditText)findViewById(R.id.EditText1);
+		pass = (EditText)findViewById(R.id.EditText5);
 
-		if (savedInstanceState == null) {
-			getFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment()).commit();
-		}
-	}
+		mRegister = (Button)findViewById(R.id.button1);
+		mRegister.setOnClickListener(this);
 
-	public void loadFiles(View view)
-	{
-		EenLeukeNaam obj = new EenLeukeNaam();
-		obj.execute();
-	}
-
-	
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.register, menu);
-		return true;
 	}
 
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+
+				new CreateUser().execute();
+
 	}
 
-	/**
-	 * A placeholder fragment containing a simple view.
-	 */
-	public static class PlaceholderFragment extends Fragment {
+	class CreateUser extends AsyncTask<String, String, String> {
 
-		public PlaceholderFragment() {
-		}
+		 /**
+         * Before starting background thread Show Progress Dialog
+         * */
+		boolean failure = false;
 
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-
-			View rootView = inflater.inflate(R.layout.fragment_register, container,
-					false);
-			return rootView;
-		}
-	}	
-	public class EenLeukeNaam extends AsyncTask<String, String, String> {
-	
-		@Override
-		protected void onPreExecute() {
-        super.onPreExecute();
-        pDialog = new ProgressDialog(Register.this);
-        pDialog.setMessage("Registreren..");
-        pDialog.setIndeterminate(false);
-        pDialog.setCancelable(true);
-        pDialog.show();
-    }
-		
-		@Override
-	protected String doInBackground(String... args) {
-        String gebruikersnaam = inputGebruikersNaam.getText().toString();
-        String geboortedatum = inputGeboortedatum.getText().toString();
-        String email = inputEmail.getText().toString();
-        String land = inputLand.getText().toString();
-        String wachtwoord1 = inputWachtwoord1.getText().toString();
-        String wachtwoord2 = inputWachtwoord2.getText().toString();
-        String lengte = inputLengte.getText().toString();
-        String gewicht = inputGewicht.getText().toString();
-
-        // Building Parameters
-        List<NameValuePair> params = new ArrayList<NameValuePair>();
-        params.add(new BasicNameValuePair("gebruikersnaam", gebruikersnaam));
-        params.add(new BasicNameValuePair("geboortedatum", geboortedatum));
-        params.add(new BasicNameValuePair("email", email));
-        params.add(new BasicNameValuePair("land", land));
-        params.add(new BasicNameValuePair("wachtwoord1", wachtwoord1));
-        params.add(new BasicNameValuePair("wachtwoord2", wachtwoord2));
-        params.add(new BasicNameValuePair("lengte", lengte));
-        params.add(new BasicNameValuePair("gewicht", gewicht));
-        
-        // getting JSON Object
-        // Note that create product url accepts POST method
-        JSONObject json = jsonParser.makeHttpRequest("http://inf1grunforall.samba-ti.nl/register.php",
-                "POST", params);
-        System.out.println(json);
-
-        // check log cat fro response
-        Log.d("Create Response", json.toString());
-        System.out.println(" log");
-        // check for success tag
-        try {
-            int success = json.getInt(TAG_SUCCESS);
-
-            if (success == 1) {
-                // successfully created product
-            	System.out.println(json + " succes");
-
-                // closing this screen
-                
-            } 
-            else 
-            {
-            	System.out.println(json + " failed");
-                // failed to create product
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-            System.out.println(json + " catch");
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            pDialog = new ProgressDialog(Register.this);
+            pDialog.setMessage("Creating User...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(true);
+            pDialog.show();
         }
-        return null;
-	}
-	
-		@Override
-	 protected void onPostExecute(String file_url) {
-            // dismiss the dialog once done
-            super.onPostExecute(file_url);
-            
-            if(pDialog.isShowing()) 
-            {
-            	pDialog.dismiss();
-            }
-            	
-	 }
-		
-	}	
 
-} // end class
+		@Override
+		protected String doInBackground(String... args) {
+			// TODO Auto-generated method stub
+			 // Check for success tag
+            int success;
+            String username = user.getText().toString();
+            String password = pass.getText().toString();
+            try {
+                // Building Parameters
+                List<NameValuePair> params = new ArrayList<NameValuePair>();
+                params.add(new BasicNameValuePair("username", username));
+                params.add(new BasicNameValuePair("password", password));
+
+                Log.d("request!", "starting");
+
+                //Posting user data to script
+                JSONObject json = jsonParser.makeHttpRequest(
+                       LOGIN_URL, "POST", params);
+
+                // full json response
+                Log.d("Login attempt", json.toString());
+
+                // json success element
+                success = json.getInt(TAG_SUCCESS);
+                if (success == 1) {
+                	Log.d("User Created!", json.toString());
+                	finish();
+                	return json.getString(TAG_MESSAGE);
+                }else{
+                	Log.d("Login Failure!", json.getString(TAG_MESSAGE));
+                	return json.getString(TAG_MESSAGE);
+
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            return null;
+
+		}
+		/**
+         * After completing background task Dismiss the progress dialog
+         * **/
+        protected void onPostExecute(String file_url) {
+            // dismiss the dialog once product deleted
+            pDialog.dismiss();
+            if (file_url != null){
+            	Toast.makeText(Register.this, file_url, Toast.LENGTH_LONG).show();
+            }
+
+        }
+
+	}
+
+}

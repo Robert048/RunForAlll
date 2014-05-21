@@ -69,19 +69,10 @@ public class MainActivity extends Activity {
 	 * METHOD
 	 * Van Login naar register scherm
 	 */
-	public void toRegister(View view)
+	public void toLogin(View view)
 	{
-		Intent intent = new Intent(this, Register.class);
+		Intent intent = new Intent(this, Login.class);
 		startActivity(intent);
 	}
 	
-	/**
-	 * METHOD
-	 * Van Login naar register scherm
-	 */
-	public void toStart(View view)
-	{
-		Intent intent = new Intent(this, Start.class);
-		startActivity(intent);
-	}
 }
