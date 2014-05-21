@@ -14,17 +14,30 @@
         android:scrollbarStyle="insideOverlay"
         android:scrollbars="vertical" >
 
+        <EditText
+            android:id="@+id/EditText01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/EditText1"
+            android:layout_alignRight="@+id/EditText1"
+            android:layout_below="@+id/EditText1"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/rounded_edges"
+            android:ems="10"
+            android:hint="@string/placeholderWachtwoord"
+            android:inputType="textPassword" />
+
         <Button
             android:id="@+id/button1"
             style="@style/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/headerTxt"
-            android:layout_centerHorizontal="true"
+            android:layout_alignLeft="@+id/EditText01"
+            android:layout_below="@+id/EditText01"
             android:layout_marginTop="17dp"
             android:background="@drawable/button3"
-            android:onClick="toStart"
-            android:text="@string/login" />
+            android:text="@string/login"
+            android:onClick="toStart" />
 
         <Button
             android:id="@+id/Button01"
@@ -33,10 +46,24 @@
             android:layout_height="wrap_content"
             android:layout_alignBaseline="@+id/button1"
             android:layout_alignBottom="@+id/button1"
-            android:layout_centerHorizontal="true"
+            android:layout_alignRight="@+id/EditText01"
             android:background="@drawable/button3"
-            android:onClick="toLogin"
+            android:onClick="toRegister"
             android:text="@string/registreer" />
+
+        <EditText
+            android:id="@+id/EditText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerTxt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="162dp"
+            android:background="@drawable/rounded_edges"
+            android:ems="10"
+            android:hint="@string/placeholderGebruikersnaam" >
+
+            <requestFocus />
+        </EditText>
 
         <TextView
             android:id="@+id/headerTxt"
@@ -48,6 +75,6 @@
             android:layout_marginTop="16dp"
             android:text="@string/app_name"
             android:textAlignment="center" />
+        
     </RelativeLayout>
-
 </ScrollView>
