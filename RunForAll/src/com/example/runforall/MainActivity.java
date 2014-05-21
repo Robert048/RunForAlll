@@ -21,6 +21,9 @@ public class MainActivity extends Activity {
         // Hide the actionbar
 		ActionBar actionBar = getActionBar();
 		actionBar.hide();
+		
+		toLogin(null);
+		finish();
 
 		if (savedInstanceState == null) {
 			getFragmentManager().beginTransaction()

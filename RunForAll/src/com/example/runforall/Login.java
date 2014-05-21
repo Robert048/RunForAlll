@@ -8,6 +8,8 @@ import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+
+import android.app.ActionBar;
 //import android.app.ActionBar;
 import android.app.Activity;
 //import android.app.Fragment;
@@ -30,6 +32,7 @@ public class Login extends Activity implements OnClickListener{
  
  private EditText user, pass;
  private Button mSubmit, mRegister;
+ 
  
   // Progress Dialog
     private ProgressDialog pDialog;
@@ -57,7 +60,11 @@ public class Login extends Activity implements OnClickListener{
   // TODO Auto-generated method stub
   super.onCreate(savedInstanceState);
   setContentView(R.layout.activity_login);
-  
+	
+  // Hide the actionbar
+	ActionBar actionBar = getActionBar();
+	actionBar.hide();
+	
   //setup input fields
   user = (EditText)findViewById(R.id.EditText1);
   pass = (EditText)findViewById(R.id.EditText01);
