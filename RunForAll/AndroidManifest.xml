@@ -172,6 +172,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.runforall.MainActivity" />
         </activity>
+        <activity
+            android:name="com.example.runforall.Login"
+            android:parentActivityName="com.example.runforall.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.runforall.MainActivity" />
+        </activity>
     </application>
 
     <uses-permission android:name="android.permission.INTERNET" />

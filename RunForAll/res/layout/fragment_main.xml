@@ -23,7 +23,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="17dp"
             android:background="@drawable/button3"
-            android:onClick="toStart"
+            android:onClick="toLogin"
             android:text="@string/login" />
 
         <Button
