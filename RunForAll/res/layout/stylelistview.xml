@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/tv"
-    android:layout_width="wrap_content"
-    android:layout_height="fill_parent"
-    android:background="@drawable/overzichtvrienden"
-    android:gravity="center"
-    android:width="250dp"
-    android:padding="10sp"
-    android:textColor="@color/darkBLue"
-    android:textSize="15sp" />
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp" >
+
+    <LinearLayout
+        android:id="@+id/Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="10dip" >
+
+        <TextView
+            android:id="@+id/Text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#0579fd"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+    </LinearLayout>
+</RelativeLayout>

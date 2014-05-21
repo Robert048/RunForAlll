@@ -64,9 +64,10 @@ public class OverzichtVrienden extends Activity {
 		simpleAdpt = new SimpleAdapter(
 		this, // context
 		vrienden, // datalist
-		android.R.layout.simple_list_item_1, // simple layout
+		//android.R.layout.simple_list_item_1, // simple layout
+		R.layout.stylelistview, // custom layout
 		new String[] { "vrienden" },  // the keys to retrieve the data
-		new int[] { android.R.id.text1 }); // key number and the view id
+		new int[] { R.id.Text1 }); // key number and the view id
 
 		lv.setAdapter(simpleAdpt);
 		
