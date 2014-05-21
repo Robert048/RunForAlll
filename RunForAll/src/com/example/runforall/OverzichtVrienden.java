@@ -1,15 +1,10 @@
 package com.example.runforall;
 
-import android.app.Activity;
 import android.app.ActionBar;
-import android.app.Fragment;
+import android.app.Activity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.os.Build;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 
 public class OverzichtVrienden extends Activity {
 
@@ -17,52 +12,22 @@ public class OverzichtVrienden extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_overzicht_vrienden);
-		
-        // Hide the actionbar
+
+		// Hide the actionbar
 		ActionBar actionBar = getActionBar();
-		actionBar.hide();		
+		actionBar.hide();
 
-		if (savedInstanceState == null) {
-			getFragmentManager().beginTransaction()
-					.add(R.id.container, new PlaceholderFragment()).commit();
-		}
+		String[] vrienden = new String[] { "Kimberly Hamers", "Martijn Jansen",
+				"Xing Woo", "Edwin Slot", "Alex de Jonge" };
+
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+				this, 								    // context for the activity
+				//android.R.layout.simple_list_item_1,  // layout to use
+				R.layout.stylelistview,  				// layout to use
+				vrienden);							    // items to be displayed
+		
+		// reference
+		ListView list = (ListView)findViewById(R.id.listView);
+		list.setAdapter(adapter);
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.overzicht_vrienden, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
-
-	/**
-	 * A placeholder fragment containing a simple view.
-	 */
-	public static class PlaceholderFragment extends Fragment {
-
-		public PlaceholderFragment() {
-		}
-
-		@Override
-		public View onCreateView(LayoutInflater inflater, ViewGroup container,
-				Bundle savedInstanceState) {
-			View rootView = inflater.inflate(
-					R.layout.fragment_overzicht_vrienden, container, false);
-			return rootView;
-		}
-	}
-
 }

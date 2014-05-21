@@ -62,6 +62,7 @@
 
     <!-- KLEUR CODE -->
     <color name="white">#ffffff</color>
+    <color name="darkBLue">#0579fc</color>
 
     <string name="title_activity_start">Start</string>
     <string name="title_activity_select_route">SelectRoute</string>
