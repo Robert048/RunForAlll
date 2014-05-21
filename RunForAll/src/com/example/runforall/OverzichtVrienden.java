@@ -19,7 +19,7 @@ import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 public class OverzichtVrienden extends Activity {
-
+	// fjskfjsldk;gjsd;lkgjs;dlkajg;dflkjg
 	// Adapter
 	SimpleAdapter simpleAdpt;
 	// The data to show
