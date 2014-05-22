@@ -31,6 +31,21 @@ public class OverzichtVrienden extends Activity {
 		vrienden.add(addFriends("vrienden", "Edwin Slot"));
 		vrienden.add(addFriends("vrienden", "Martijn Jansen"));
 		vrienden.add(addFriends("vrienden", "Xing Woo"));
+		vrienden.add(addFriends("vrienden", "a van den Ham"));
+		vrienden.add(addFriends("vrienden", "b de Jonge"));
+		vrienden.add(addFriends("vrienden", "c Slot"));
+		vrienden.add(addFriends("vrienden", "d Jansen"));
+		vrienden.add(addFriends("vrienden", "e Woo"));
+		vrienden.add(addFriends("vrienden", "f van den Ham"));
+		vrienden.add(addFriends("vrienden", "g de Jonge"));
+		vrienden.add(addFriends("vrienden", "h Slot"));
+		vrienden.add(addFriends("vrienden", "i Jansen"));
+		vrienden.add(addFriends("vrienden", "j Woo"));
+		vrienden.add(addFriends("vrienden", "k van den Ham"));
+		vrienden.add(addFriends("vrienden", "l de Jonge"));
+		vrienden.add(addFriends("vrienden", "m Slot"));
+		vrienden.add(addFriends("vrienden", "n Jansen"));
+		vrienden.add(addFriends("vrienden", "o Woo"));		
 	}
 
 	private HashMap<String, String> addFriends(String key, String name) {

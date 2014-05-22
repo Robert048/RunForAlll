@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:padding="8dp" >
 
@@ -9,14 +9,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:background="@drawable/selector"
         android:paddingLeft="10dip" >
 
         <TextView
             android:id="@+id/Text1"
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:textColor="#0579fd"
-            android:textSize="20sp"
-            android:textStyle="italic" />
+            android:textSize="20sp" />
     </LinearLayout>
 </RelativeLayout>
