@@ -156,6 +156,7 @@
             android:layout_marginTop="9dp"
             android:background="@drawable/rounded_edges"
             android:ems="10"
+            android:freezesText="true"
             android:hint="@string/geboortedatum" />
 
     </RelativeLayout>

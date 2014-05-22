@@ -15,7 +15,7 @@
     <string name="instellingen">Instellingen</string>
     <string name="checkboxMan">Man</string>
     <string name="checkboxVrouw">Vrouw</string>
-    <string name="geboortedatum">Geboortedatum</string>
+    <string name="geboortedatum">Geb: dd-mm-yyyy</string>
     <string name="email">E-mail</string>
     <string name="land">Land</string>
     <string name="lengte">Lengte</string>
